@@ -1,0 +1,3 @@
+@echo off
+cd /d "C:\laragon\www\ecommerce-app"
+npm run dev
