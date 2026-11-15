@@ -188,7 +188,8 @@ class CartService
         $left  = $min > 0 ? max($min - $sub, 0) : 0;
 
         return [
-            'count'         => (int) $lines->sum('qty'),
+            'count'         => $lines->count(),                       // different products, shown on the cart icon and in "Your cart (n)"
+            'quantity'      => (int) $lines->sum('qty'),             // all pieces together
             'subtotal'      => $sub,
             'subtotal_fmt'  => $s->formatMoney($sub),
             'free_min'      => $min > 0 ? $min : null,
